@@ -1,0 +1,13 @@
+<h1> New User </h1>
+
+<%= form_for @user do |u| %>
+<p>
+  <%= u.label :username %> <br>
+  <%= u.text_area :username %> <br>
+  <%= u.label :email %> <br>
+  <%= u.text_area :email %> <br>
+  <%= u.label :password %> <br>
+  <%= u.text_area :password %> <br>
+  <%= u.submit "Sumbit" %>
+</p>
+ <% end %>
