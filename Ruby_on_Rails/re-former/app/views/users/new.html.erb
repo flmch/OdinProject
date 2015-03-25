@@ -10,14 +10,52 @@
       </ul>
 <% end %>
 
+<ol>
+	<br>
+	<li> html form: </li>
+	<br>
+		<form action = "users" method = "post">
+			Username<br> <input type="text" name="username"><br>
+			Email<br> <input type="text" name="email"><br>
+			Password<br> <input type="text" name="password"><br>
+			<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+			<input type="submit" value = "submit">
+		</form>
 
-<form action = "users" method = "post">
-	Username<br> <input type="text" name="username"><br>
-	Email<br> <input type="text" name="email"><br>
-	Password<br> <input type="text" name="password"><br>
-	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-	<input type="submit" value = "submit">
-</form>
+	<br>
+	<li> form_tag: </li>
+	<br>
+		<%= form_tag("users", method: "post") do %>
+			<%= label_tag :username, "Username" %>  <br>
+			<%= text_field_tag :username %> <br>
+
+			<%= label_tag :emal, "Email" %>  <br>
+			<%= text_field_tag :email %> <br>
+
+			<%= label_tag :password, "Passwrod" %>  <br>
+			<%= text_field_tag :password %> <br>
+
+			<%= submit_tag "submit" %>					
+		<% end %>
+	<br>
+
+	<br>
+	<li> form_for form: </li>
+	<br>
+	<%= form_for @user do |u| %>
+		<%= u.label :username %> <br>
+		<%= u.text_field :username %> <br>
+
+		<%= u.label :emal %> <br>
+		<%= u.text_field :email %> <br>
+ 
+		<%= u.label :password %> <br>
+		<%= u.text_field :password %> <br>
+
+		<%= u.submit "submit" %>
+	<% end %>
+
+</ol>
 
 <br>
 <%= link_to "back to home", root_path %>

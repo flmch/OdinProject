@@ -5,7 +5,13 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.new(user_params)
+		if params.has_key?(:user) 
+		    @user = User.new(user_params_form_for)
+		else
+			@user = User.new(user_params_html)
+		end
+
+
 		if @user.save
 			redirect_to root_path()
 		else
@@ -16,8 +22,14 @@ class UsersController < ApplicationController
 
 private
 
-	def user_params
+	def user_params_html
 		params.permit(:username,
+									 :email,
+									 :password)
+	end
+
+	def user_params_form_for
+		params.require(:user).permit(:username,
 									 :email,
 									 :password)
 	end
