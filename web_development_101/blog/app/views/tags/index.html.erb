@@ -1,0 +1,12 @@
+<h1>Listing Tags</h1>
+ 
+<table>
+
+  <% @tags.each do |tag| %>
+    <tr>
+      <td><%= link_to tag.name, tag_path(tag) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to "Go to articles", articles_path() %>-

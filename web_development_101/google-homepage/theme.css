@@ -1,0 +1,29 @@
+
+#toprightbar{
+	position: absolute;
+	right: 0px;	
+}
+
+#toprightbar li{
+	display: inline;
+	margin: 10px;
+}
+
+
+#main{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -80%);
+	text-align: center;
+}
+
+.buttonstyle{
+	-webkit-appearance:button;
+}
+
+#div2change{
+	height: 100px;
+	width: 100px;
+	background-color: black;
+}
