@@ -1,13 +1,23 @@
 <h1> New User </h1>
 
-<%= form_for @user do |u| %>
-<p>
-  <%= u.label :username %> <br>
-  <%= u.text_area :username %> <br>
-  <%= u.label :email %> <br>
-  <%= u.text_area :email %> <br>
-  <%= u.label :password %> <br>
-  <%= u.text_area :password %> <br>
-  <%= u.submit "Sumbit" %>
-</p>
- <% end %>
+<h3> There are total <%= @alluser.count%> users </h3><br>
+
+<% if @user.errors.any? %>
+     <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+<% end %>
+
+
+<form action = "users" method = "post">
+	Username<br> <input type="text" name="username"><br>
+	Email<br> <input type="text" name="email"><br>
+	Password<br> <input type="text" name="password"><br>
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<input type="submit" value = "submit">
+</form>
+
+<br>
+<%= link_to "back to home", root_path %>
