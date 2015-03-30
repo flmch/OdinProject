@@ -1,0 +1,23 @@
+#cal {
+	width: 800px;
+	position: relative;
+	left: 50%;
+	-webkit-transform: translatex(-50%);
+	transform: translatex(-50%);
+	text-align: center;
+}
+
+#cal table {
+	position: relative;
+	left: 50%;
+	-webkit-transform: translatex(-50%);
+	transform: translatex(-50%);	
+}
+
+#cal table tr th {
+	border: 0;
+	border-collapse: collapse;
+	border: 1px solid black;
+	margin: 0px;
+	padding: 0px;
+}
