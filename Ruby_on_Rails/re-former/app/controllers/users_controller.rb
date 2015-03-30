@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 
 
 		if @user.save
+			flash.notice = "New user created!"
 			redirect_to root_path()
 		else
 			@alluser = User.all
