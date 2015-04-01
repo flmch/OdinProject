@@ -1,4 +1,4 @@
-#cal {
+#calContainer {
 	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
@@ -6,7 +6,7 @@
 	font-size: 30px;
 }
 
-#cal table {
+#calContainer table {
 	position: relative;
 	left: 50%;
 	-webkit-transform: translatex(-50%);
@@ -14,11 +14,11 @@
 	border-collapse: collapse;
 }
 
-#cal tr {
+#calContainer tr {
 
 }
 
-#cal th {
+#calContainer th {
 	border: 0;
 	border: 1px solid black;
 	margin: 0px;
@@ -35,17 +35,19 @@
 	transform: translatex(-50%);		
 	text-align: right;
 	font-size: 40px;
-	width: 233px;
+	width: 223px;
 	height: 80px;
 	padding-right: 10px;
-	letter-spacing: -5px;
+	padding-left: 10px;
+	letter-spacing: 0px;
+	border-top-left-radius: 4px; 
+	border-top-right-radius: 4px;
 }
 
 .display p {
-	background-color: red;
 	//vertical-align: text-bottom;
 	position: relative;
-	//top: 50%;
+	//top: -50%;
 	//-webkit-transform: translateY(-50%);
   	//-ms-transform: translateY(-50%);
   	//transform: translateY(-50%);
