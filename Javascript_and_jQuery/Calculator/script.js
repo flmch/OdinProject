@@ -2,7 +2,7 @@ window.onload = function(){
 	var table = document.getElementById("caltable");
 	var cells = table.getElementsByTagName("th");
 
-	var current = 0,last = 0, sign = ""; 
+	var current = 0,last = 0, sign = "", toBeDisplayed, flag = true; 
 	document.getElementById("dis").innerHTML = current;
 
 	for(var i=0;i<cells.length;i++){
@@ -10,6 +10,7 @@ window.onload = function(){
 			var input = this.innerHTML.trim();
 			if(input == 'AC'){
 				current = 0;
+				flag = true;
 			}else if(input == "+/-"){
 				if(current[0] == '-'){
 					current = current.substr(1);
@@ -25,12 +26,18 @@ window.onload = function(){
 					current += "%" ;
 				}
 			}else if(input == "x" || input == "/" || input == "+" || input == "-" ){
+				if(flag == true){
+					last = current;
+					flag = false;
+				}else{
+					last = getResult(sign,current,last);
+				}
 				sign = input;
-				last = current;
 				current = 0;
 			}else if(input == "="){
 				current = getResult(sign,current,last);
 				last = 0;
+				flag = true;
 			}else{
 				current = current == 0 ? input: current+input;
 			}
@@ -44,13 +51,13 @@ window.onload = function(){
 
 	function getResult(s, cur, la){
 		if(s == "+"){
-			return la + cur;
+			return la + parseInt(cur);
 		}else if( s == "-" ){
 			return la - cur
 		}else if( s == "x" ){
 			return la * cur;
 		}else if( s == "/" ){
-			return (la/cur).toFixed(2);
+			return la/cur;
 		}
 	}
 }
