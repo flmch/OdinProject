@@ -1,0 +1,56 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	vertical-align: top;
+}
+
+.centerElement {
+	position: relative;
+	left: 50%;
+    -moz-transform: translatex(-50%);
+	-webkit-transform: translatex(-50%);
+	transform: translatex(-50%);
+	text-align: center;
+}
+
+#mainBoard {
+	display: inline-block;
+	position: absolute;
+	width: 450px;
+	height: 450px;
+	top: 140px;
+}
+
+#scoreBoard {
+	position: relative;
+	top: 140px;
+	font-size: 28px;
+}
+
+.btn:focus,.btn:active {
+   outline: none !important;
+}
+
+.btn-default {
+	top: 10px;
+}
+
+.rowElement {
+	height: 15px;
+}
+
+.cellElement {
+	width: 15px;
+	height: 15px;
+    display: inline-block;
+    border: 1px solid #B1B1B1;
+    vertical-align: top;
+}
+
+.snakeBody {
+	background-color: red;
+}
+
+.food {
+	background-color: blue;
+}
